@@ -1,0 +1,195 @@
+
+<!DOCTYPE HTML>
+<html lang="fr">
+    <head>
+
+
+
+
+
+
+
+        <title>Covid</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" type="image/x-icon" href="style/images/favicon.png">
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+        <link rel="stylesheet" type="text/css" href="color/red.css" media="all">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/prettyPhoto.css">
+        <link rel="stylesheet" type="text/css" href="type/museo.css" media="all">
+        <link rel="stylesheet" type="text/css" href="type/ptsans.css" media="all">
+        <link rel="stylesheet" type="text/css" href="type/charis.css" media="all">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        {% block style %}
+
+        {% endblock %}
+
+        <!-- Import script -->
+        <script src="js/jquery-1.6.2.min.js"></script>
+        <script src="js/ddsmoothmenu.js"></script>
+        <script src="js/transify.js"></script>
+        <script src="js/jquery.aw-showcase.js"></script>
+        <script src="js/jquery.jcarousel.js"></script>
+        <script src="js/carousel.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <script src="js/jquery.superbgimage.min.js"></script>
+        <script src="js/jquery.slickforms.js"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+                $('.forms').dcSlickForms();
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $("#showcase").awShowcase({
+                    content_width: 900,
+                    content_height: 400,
+                    auto: true,
+                    interval: 3000,
+                    continuous: false,
+                    arrows: true,
+                    buttons: true,
+                    btn_numbers: true,
+                    keybord_keys: true,
+                    mousetrace: false,
+                    /* Trace x and y coordinates for the mouse */
+                    pauseonover: true,
+                    stoponclick: false,
+                    transition: 'fade',
+                    /* hslide/vslide/fade */
+                    transition_delay: 0,
+                    transition_speed: 500,
+                    show_caption: 'onload'
+                            /* onload/onhover/show */
+                });
+            });
+        </script>
+        <!-- Fin script-->
+    </head>
+    <body>
+        <div class="showcase-content" background-color="white" opacity="0%"> <img src="images/covid.png" alt="" width="10%"  ></div>
+
+    </div>
+
+
+
+    <div id="thumbs">  <a href="images/virus.png"></a> </div>
+    <div id="superbgimage">
+        <div class="scanlines"></div>
+    </div>
+    <div id="wrapper">
+
+        <div id="header">
+            <div class="logo opacity"><a href="index.html"><img src="style/images/logo.png" alt=""></a></div>
+            <div class="social">
+
+                <ul>
+
+
+
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <div class="clear"></div>
+        <div id="menu" class="menu opacity">
+            <ul>
+                <li><a href="index.php?page=acceuil">Accueil</a></li>
+                <li><a href="#">Les actualités</a>
+                    <ul>
+                        <li><a href="index.php?page=actualite">Actualités du jour</a> 
+                        <li><a href="index.php?page=actualiteeco">Actualités Econoomique</a> 
+                        <li><a href="index.php?page=actualitejur">Actualités Juridique</a> 
+                        <li><a href="index.php?page=actualitemana">Actualités Managériales</a> 
+                        <li><a href="index.php?page=actualiteetu">Actualités des Etudiants</a> 
+                    </ul>
+
+
+                <li><a href="index.php?page=mentions">Mentions légales</a> 
+
+                <li><a href="#">FAQ</a>
+                    <ul>
+                        <li><a href="index.php?page=question">Poser une question</a></li>
+                        <li><a href="index.php?page=forum">Voir les questions</a></li>
+
+
+                    </ul>
+
+
+                <li><a href="#">Mon compte</a>
+                    <ul>
+
+                        {%if session.role == 2 %}
+                            <li>
+                                <a href="index.php?page=panel">Panel admin</a></li>
+                            {% endif %}
+                            {%if session.login is defined %}
+                            <li><a href="index.php?page=compte&pseudo={{u.pseudo}}">Gestion de compte</a></li>
+                            {% else %}
+                            <li><a href="index.php?page=inscription">Inscription</a></li>
+                            {% endif %}
+                            {%if session.login is defined %}
+                            <li><a href="index.php?page=deconnexion">Se déconnecter</a></li>
+                            {% else %}
+                            <li><a href="index.php?page=connexion">Se connecter</a></li>
+                            {% endif %}
+                    </ul>
+                <li>{% if form.utilisateurs.photo is not empty %}
+                    <p class="imgcenter"><img src="images/profiles{{utilisateurs.photo}}" alt= "image profil " /></p>
+                    {% endif %}</li>
+
+                </ul>
+
+
+
+                <br style="clear: left">
+
+            </div>
+            {% block contenue %}
+                <div id="container" class="opacity">
+
+                    {% block inscription %}
+
+                        <div id="showcase" class="showcase">
+                            <div class="showcase-slide">
+                                <div class="showcase-content"> <img src="images/ct.webp" alt="" width="100%"  ></div>
+                            </div>
+                            <div class="showcase-slide">
+                                <div class="showcase-content"> <img src="images/geste.png" alt="" width="90%" > </div>
+                                <div class="showcase-caption">  </div>
+                            </div>
+                            <div class="showcase-slide">
+
+                                <div class="showcase-content"> <img src="images/cc.jpg" alt="" width="85%"></div>
+                                <div class="showcase-caption"> </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="intro"></div>
+                        <div class="hr2"></div>
+                        <h1>Qu'est ce que le coronavirus?</h1>
+
+                        <p> Le coronavirus coronavirus 2019 (COVID-19) est une maladie infectieuse provoquée par un nouveau virus qui n'avait encore jamais été identifié chez l'être humain.
+                            Ce virus provoque une maladie respiratoire (analogue à la grippe) avec des symptômes comme la toux, la fièvre et, dans les cas les plus sévères, une pneumonie. On peut s'en protéger en se lavant fréquemment les mains, et en évitant de se toucher le visage.
+                    </div>
+
+
+                {%endblock%} {% endblock %}
+            </div>   
+
+
+
+            {% block js %}
+
+            {% endblock %}
+            <script src="js/scripts.js"></script>
+
+        </body>
+    </html>
